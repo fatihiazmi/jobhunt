@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-black text-white font-hanken-grotesk">
-    <div class="px-10">
+    <div class="px-10 pb-10">
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
                 Logo
@@ -27,9 +27,20 @@
                 <a href="/salaries">Salaries</a>
                 <a href="/companies">Companies</a>
             </div>
+
+            @auth
             <div>
                 <a href="/jobs/post">Post A Job</a>
             </div>
+                
+            @endauth
+
+            @guest
+                <div class="space-x-6 font-bold">
+                    <a href="/register">Sign Up</a>
+                    <a href="/login">Login</a>
+                </div>
+            @endguest
         </nav>
 
         <main class="mt-10 max-w-[986px] m-auto">
